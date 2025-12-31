@@ -151,17 +151,22 @@ def decode(word, key):
 def main():
     while True:
         print("----------------------")
+        print("0: Exit\n")
         print("1: Encode plain text\n")
         print("2: Decode encrypted text\n")
-        
+    
         inpt = input("Enter choice: ")
         if inpt.isdigit():
+            if inpt == "0":
+                print("Exit the program.")
+                break
             text = input("Enter text: ")
             keyword = input("Enter keyword: ")
             if inpt == "1":
                 print("Encoded text: " + encode(text, keyword))
             elif inpt == "2":
                 print("Decoded text: " + decode(text, keyword))
+            
             else:
                 print("Invalid input")
         else:
