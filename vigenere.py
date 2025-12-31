@@ -116,7 +116,7 @@ def encode(word, key):
             stddisp = 32
             mod = 6
         row = ord(word[i]) - stddisp
-        col = ord(key[i % len(key)]) - stddisp
+        col = ord(key[i % len(key)]) - 97
         new_word += chr(stddisp + (row + col) % mod)
     return new_word
 
@@ -147,7 +147,7 @@ def decode(word, key):
             stddisp = 32
             mod = 6
         row = ord(word[i]) - stddisp
-        col = ord(key[i % len(key)]) - stddisp
+        col = ord(key[i % len(key)]) - 97
         decoded_word += chr(stddisp + (row - col) % mod)
     return decoded_word
 
@@ -163,17 +163,26 @@ def main():
             if inpt == "0":
                 print("Exit the program.")
                 break
+
             text = input("Enter text: ")
+            if not text:
+                print("text cannot be empty.")
+                continue
+
             keyword = input("Enter keyword: ")
+            if not keyword:
+                print("Keyword cannot be empty.")
+                continue
+
             if inpt == "1":
                 print("Encoded text: " + encode(text, keyword))
             elif inpt == "2":
                 print("Decoded text: " + decode(text, keyword))
             
             else:
-                print("Invalid input")
+                print("\nEnter choice can only enter 1, 2, 3")
         else:
-            print("Invalid input")
+            print("\nEnter choice can only enter 1, 2, 3")
 
 if __name__ == "__main__":
     main()
