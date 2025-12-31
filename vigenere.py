@@ -115,7 +115,7 @@ def encode(word, key):
             stddisp = 32
             mod = 6
         row = ord(word[i]) - stddisp
-        col = ord(key[i % len(key)]) - stddisp
+        col = ord(key[i % len(key)]) - stddisp #챗GPT는 stddisp >> 97로 변경할 것을 권유
         new_word += chr(stddisp + (row + col) % mod)
     return new_word
 
