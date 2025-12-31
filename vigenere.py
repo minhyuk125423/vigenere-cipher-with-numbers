@@ -146,7 +146,7 @@ def decode(word, key):
             stddisp = 32
             mod = 6
         row = ord(word[i]) - stddisp
-        col = ord(key[i % len(key)]) - stddisp
+        col = ord(key[i % len(key)]) - stddisp #챗GPT는 stddisp >> 97로 변경할 것을 권유
         decoded_word += chr(stddisp + (row - col) % mod)
     return decoded_word
 
