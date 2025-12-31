@@ -1,3 +1,4 @@
+#   원본
 # def encode(word,key):
 #     new_word = ""
 #     key = key.lower()
@@ -85,6 +86,8 @@
 
 # if __name__ == "__main__":
 #     main()
+
+#아래는 내가 수정한 부분
 
 def encode(word, key):
     new_word = ""
