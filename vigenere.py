@@ -180,9 +180,9 @@ def main():
                 print("Decoded text: " + decode(text, keyword))
             
             else:
-                print("\nEnter choice can only enter 1, 2, 3")
+                print("\nEnter choice can only enter 0, 1, 2")
         else:
-            print("\nEnter choice can only enter 1, 2, 3")
+            print("\nEnter choice can only enter 0, 1, 2")
 
 if __name__ == "__main__":
     main()
